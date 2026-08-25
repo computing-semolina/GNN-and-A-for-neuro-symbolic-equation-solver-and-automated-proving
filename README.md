@@ -9,7 +9,7 @@ Contact: imranbseriousacc@gmail.com
 
 A hybrid neuro-symbolic AI system that combines Large/Small Language Models (auto-formalization) with deterministic Graph Neural Network (GNN) guided search over Abstract Syntax Trees (ASTs) to guarantee 100% sound mathematical proofs without probabilistic hallucination.
 
-### 0. Natural Language Auto-Formalization (Qwen2.5-Math SLM)
+### 0. Natural Language Auto-Formalization (Qwen SLM)
 - **Natural Language Translation:** Fine-tuned Small Language Model (SLM) that parses informal math word problems into structured symbolic DSL strings.
 - **AST Formatting Guardrails:** Normalizes math intent into strict expression trees or `Eq()` equality predicates prior to graph parsing.
 

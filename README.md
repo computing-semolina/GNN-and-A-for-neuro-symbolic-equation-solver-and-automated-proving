@@ -2,6 +2,9 @@
 A hybrid neuro-symbolic math engine combining SLM auto-formalization (Qwen) with Conv GNN-guided A* graph search over ASTs for deterministic proofs .
 # Neuro-Symbolic Math Proof Engine (GNN + A* Search)
 
+Author: Imran B 
+Contact: imranbseriousacc@gmail.com
+
 > ⚠️ **Status:** Research Prototype .
 
 A hybrid neuro-symbolic AI system that combines Large/Small Language Models (auto-formalization) with deterministic Graph Neural Network (GNN) guided search over Abstract Syntax Trees (ASTs) to guarantee 100% sound mathematical proofs without probabilistic hallucination.

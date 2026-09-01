@@ -1,40 +1,63 @@
-# GNN-and-A-for-neuro-symbolic-equation-solver-and-automated-proving
-A hybrid neuro-symbolic math engine combining SLM auto-formalization (Qwen) with Conv GNN-guided A* graph search over ASTs for deterministic proofs .
-# Neuro-Symbolic Math Proof Engine (GNN + A* Search)
+# NeuroSymbolicReasoning
 
-Author: Imran B 
-Contact: imranbseriousacc@gmail.com
+An experimental research project exploring neural and symbolic approaches to automated reasoning.
 
-> ⚠️ **Status:** Research Prototype .
+## About
 
-A hybrid neuro-symbolic AI system that combines Large/Small Language Models (auto-formalization) with deterministic Graph Neural Network (GNN) guided search over Abstract Syntax Trees (ASTs) to guarantee 100% sound mathematical proofs without probabilistic hallucination.
+The goal of this project is to investigate how neural networks can learn to reason over structured problems while working alongside symbolic systems that provide explicit rules, constraints, and verifiable transformations.
 
-### 0. Natural Language Auto-Formalization (Qwen SLM)
-- **Natural Language Translation:** Fine-tuned Small Language Model (SLM) that parses informal math word problems into structured symbolic DSL strings.
-- **AST Formatting Guardrails:** Normalizes math intent into strict expression trees or `Eq()` equality predicates prior to graph parsing.
+The initial experiments focus on mathematical reasoning, combining approaches such as:
 
-### 1. Symbolic AST & Pattern Matching Core
-- **Immutable AST Engine:** Represents expressions (`Op`, `Var`, `Num`) and multi-fact logical states (`ProofState`) as immutable trees.
-- **Bi-directional Pattern Matching:** Unifies wildcard variables (`?A`, `?B`) across 50+ domain rules while evaluating guard conditions (e.g., non-zero denominators).
+* Graph Neural Networks (GNNs)
+* Symbolic mathematical representations and rules
+* Monte Carlo Tree Search (MCTS)
+* Learned guidance for reasoning and search
 
-### 2. Relational Knowledge Graph Converter
-- **PyTorch Geometric Integration:** Transforms AST nodes and logical relations into heterogeneous graphs.
-- **Heterogeneous Edges:** Encodes structural hierarchy (`AST_CHILD`) alongside domain-specific predicates (`PARALLEL`, `PERPENDICULAR`, `DIVIDES`, `EQUAL_TO`).
+The architecture is intentionally not fixed. The project is an ongoing research process where different architectures and reasoning strategies are developed, tested, and compared.
 
-### 3. Deep RL Policy & Value Network (`RLUniversalMathRGNN`)
-- **RGCN Backbone:** Multi-layer `RGCNConv` passes message vectors across distinct edge relations.
-- **Actor Head (Policy):** Outputs action logits over valid rules, dynamically masked to enforce valid mathematical transformations.
-- **Critic Head (Value):** Predicts scalar values estimating remaining search distance to a terminal solved state.
+## Experiments
 
-### 4. Neural-Guided Best-First Search ($A^*$)
-- **Priority Evaluation:** Evaluates nodes via $f(n) = g(n) + h(n)$, balancing search depth penalties, policy log-probabilities, and value estimates.
-- **Terminal Verification:** Validates variable isolation, target predicate proofs, or minimal complexity states.
+Each directory in this repository represents a different architectural experiment or research direction.
 
-### 5. Curriculum & Expert Iteration
-- **Synthetic Backward Generation:** Applies inverse rewrite rules to construct self-supervised training trajectories.
-- **Adaptive Curriculum & Replay:** Automatically scales search depth (1–8) at an 85% success threshold and rescales exploration noise on persistent failure states.
+Every experiment has its own README documenting:
 
-## to Start:
-1. Open `neuro-symbolic solver.ipynb` directly in Google Colab.
-2. Set runtime type to **T4 GPU**.
-3. Run all cells to execute the rules suite, GNN search evaluator, and Qwen auto-formalization pipeline.
+* The architecture
+* The reasoning approach
+* Training methodology
+* Dataset and problem representation
+* Results and benchmarks
+* What worked and what did not
+* Future improvements
+
+### Current experiments
+
+| Experiment                            | Description | Status       |
+| ------------------------------------- | ----------- | ------------ |
+| [Architecture 01](./architecture_01/) | ...         | Experimental |
+| [Architecture 02](./architecture_02/) | ...         | Experimental |
+
+New architectures will be added as the research evolves.
+
+## Research Direction
+
+The broader objective is to determine which architectural principles allow neural and symbolic components to work together effectively for complex reasoning.
+
+Mathematics is the initial testing domain, but the longer-term goal is to investigate whether the underlying reasoning architectures can generalize to other structured domains, such as coding.
+
+## Evaluation
+
+A major focus of the project is establishing reliable evaluation on problems that are not seen during training.
+
+As the architectures mature, experiments will be evaluated using reproducible benchmarks and comparisons between different approaches.
+
+## Status
+
+This is an active research project.
+
+Architectures, training methods, datasets, and experiments may change significantly as new ideas are tested.
+
+## AUTHOR
+
+Imran Bibrine,
+15 years old,
+from Agadir.

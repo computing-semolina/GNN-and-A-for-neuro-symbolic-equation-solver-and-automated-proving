@@ -31,11 +31,6 @@ Every experiment has its own README documenting:
 
 ### Current experiments
 
-| Experiment                            | Description | Status       |
-| ------------------------------------- | ----------- | ------------ |
-| [Architecture 01](./architecture_01/) | ...         | Experimental |
-| [Architecture 02](./architecture_02/) | ...         | Experimental |
-
 New architectures will be added as the research evolves.
 
 ## Research Direction
